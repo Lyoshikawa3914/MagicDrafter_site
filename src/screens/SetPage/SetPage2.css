@@ -1,0 +1,60 @@
+.setPageBody {
+    animation: fadeInAnimation ease-in 0.8s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+
+    padding: 0;
+    margin: 0; 
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    
+    
+}
+
+.mtgSetNameTitle {
+    animation: fadeInAnimation ease-in 2s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+
+@keyframes fadeInAnimation {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.landingImage {
+    height: 500px;
+}
+
+.setButton {
+    transition: 0.1s ease-in-out;
+}
+
+.setButton:hover {
+    transform: scale(1.05)
+}
+
+.ratingContainer {
+    transition: 0.1s ease-in-out;
+    
+}
+
+.ratingContainer:hover {
+    transform: scale(1.05);
+    cursor: pointer;
+}
+
+.infoIcon {
+    transition: 0.1s ease-in-out;
+}
+
+.infoIcon:hover {
+    cursor: pointer;
+    transform: scale(1.2);
+    z-index: 100;
+}

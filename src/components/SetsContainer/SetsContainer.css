@@ -1,0 +1,111 @@
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to {opacity: 1; }
+}
+
+.fade-in-element {
+    
+    animation: fadeIn 0.34s ease-in;
+}
+
+.container {
+    display: flex;
+    
+}
+
+
+/* .set {
+    border: 1px;
+    border-radius: 20%;
+    border-style: solid;
+    height: 200px;
+    width: 250px;
+    flex: 1;
+} */
+
+.spinwheel {
+    top: 50%;
+    padding-top: 5em;
+}
+
+.innerContainer {
+   
+}
+
+.set-container {
+    transition: 0.2s ease-in-out;
+    height: 400px;
+    width: 300px; 
+    background: rgb(238,174,202);
+background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%);
+    
+    
+}
+
+.set-container:hover {
+    z-index: 10;
+    cursor: pointer;
+    transform: scale(1.15);
+    background-color: rgb(189, 189, 189);
+    
+    
+    
+}
+
+.setIcon {
+    transition: ease-in-out 0.1s;
+    
+}
+
+.setIcon:hover {
+    transform: scale(1.3);
+}
+
+.image {
+    width: 200px;
+}
+
+.setCode {
+    font-family: 'Inter', "Helvetica";
+    color:rgb(47, 44, 44);
+}
+
+
+
+
+/* .setIcon:hover {
+    transform: scale(1.3);
+    cursor: pointer;
+    
+} */
+
+@media screen and (max-width: 640px) {
+    .set-container {
+        
+        width: 255px;
+        
+    }
+
+    .image {
+        width: 170px;
+    }
+
+    .innerContainer{
+        margin-left: 0.2em;
+        
+    }
+}
+
+@media screen and (min-width: 769px) and (max-width: 900px) {
+    .set-container {
+        width: 255px;
+        
+    }
+
+    .image {
+        width: 170px;
+    }
+
+    
+
+}

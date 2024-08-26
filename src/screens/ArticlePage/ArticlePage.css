@@ -1,0 +1,36 @@
+
+
+.articlePageContainer{
+    width: calc(100% + 2012.344px); /* Assuming the parent has a margin of 20px on each side */
+    margin-left: -545.172px;  /* Offset the left margin */
+    margin-right: -545.172px;
+    max-width: calc(100% + 1050px);
+    
+    
+    
+}
+
+.upperContainer {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    
+
+}
+
+.articleAuthorContainer {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: flex-start;
+}
+
+
+
+.imageContainer {
+    background-image: url('/img/mh3-image-1.png');
+    background-size: cover; /* Ensures the image covers the container */
+    background-position: center; /* Centers the image */
+    width: 100%; /* Full width of the container */
+    height: 300px; /* Adjust the height as needed */
+}

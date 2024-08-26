@@ -1,0 +1,76 @@
+.body {
+    position:absolute;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 300px;
+    background-color: blue;
+    right:-350px;
+    z-index: 10;
+    transition: right 0.3s ease;
+    gap: 200px;
+   
+}
+
+.body.active {
+    right:0;
+    
+}
+
+.close {
+    position: relative;
+    width: 2rem;
+    height: 2rem;
+    display: flex; 
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    align-self: flex-end;
+    margin-top: 2em;
+    padding-right: 2em;
+  }
+  
+  .closeLine {
+    position: absolute;
+    width: 2rem;
+    height: 0.25rem;
+    border-radius: 10px;
+    background-color: black;
+    transition: all 0.3s linear;
+    
+  }
+  
+  .closeLine:first-child {
+    transform: rotate(45deg);
+  }
+  
+  .closeLine:nth-child(2) {
+    transform: rotate(-45deg);
+  }
+  
+.mainContainer {
+    display: flex;
+    flex-direction: column;
+    justify-self: center;
+    
+}
+
+.filterContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.filterContainer ul {
+  display: grid;
+  grid-row-gap: 10px; /* Space between items */
+  list-style-type: none; /* Remove default bullets */
+  padding: 0; /* Remove default padding */
+  margin: 0; /* Remove default margin */
+}
+
+.buttonContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

@@ -1,0 +1,35 @@
+.searchBar {
+    margin-top: -20px;
+}
+
+.search {
+    width: 500px;
+    height: 35px;
+    padding-left: 0.5em;
+}
+
+.searchButton {
+    height: 35px; 
+    width: 65px;
+    border: 2px;
+    border-style: solid;
+    border-color: rgb(148, 163, 184);
+    background-color: white;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    padding-top: 8px;
+    font-family: 'Inter', Helvetica;
+
+}
+
+@media screen and (min-width:460px) {
+    .search {
+        width:350px;
+    }
+}
+
+@media screen and (min-width:960px) {
+    .search {
+        width:500px;
+    }
+}

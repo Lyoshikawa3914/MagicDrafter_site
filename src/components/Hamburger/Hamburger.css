@@ -1,0 +1,63 @@
+.hamburger {
+    display: none;
+    width: 2rem;
+    height: 1.5rem;
+    
+    justify-content: space-around;
+    flex-flow: column nowrap;
+    z-index: 9;
+    
+
+    padding-right: 3.5em;
+    cursor: pointer;
+
+    /*the original position was relative or fixed, without 'right'*/
+    position: absolute;
+    right: 0;
+}
+
+.burger {
+    width: 2rem;
+    height: 0.25rem;
+    border-radius: 10px;
+    background-color: black;
+    transform-origin: 1px;
+    transition: all 0.3s linear;
+}
+
+
+.hamburger.active .burger:nth-child(1) {
+    transform: rotate(47deg);
+    background-color: black;
+    margin-bottom: 15px;
+    
+}
+
+.hamburger.active .burger:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger.active .burger:nth-child(3) {
+    transform: rotate(-47deg);
+    background-color: black;
+    
+
+}
+
+.sideMenu.hidden {
+    display: none;
+}
+
+@media (max-width: 1060px) {
+    .hamburger {
+        display: flex;
+    }
+
+    .hamburger.active .burger:nth-child(1) {
+        background-color: white;
+    }
+
+    .hamburger.active .burger:nth-child(3) {
+        background-color: white;
+    }
+}
