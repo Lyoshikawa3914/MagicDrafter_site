@@ -10,9 +10,9 @@ import { Footer } from '../../components/Footer/Footer.jsx';
 
 export const SetsPage = () => {
     return (
-    <div className='setsPageBody absolute left-0 top-0 flex mb-64 gap-16 content-center justify-between align-middle'>
+    <div className='setsPageBody fade-in-element absolute left-0 top-0 flex mb-64 gap-16 content-center justify-between align-middle'>
         
-        <div className='upperContainer  gap-6 flex-col w-full flex content-center justify-center align-middle bg-white'>
+        <div className='upperContainer gap-6 flex-col w-full flex content-center justify-center align-middle bg-white'>
             <div className=''>
                 <NavigationBar/>
             </div>
@@ -24,7 +24,7 @@ export const SetsPage = () => {
             
         </div>
         
-        <div className='setsContainer sticky w-full flex justify-center mb-40 mt-2'>
+        <div className='sticky w-full flex justify-center align-middle items-center mb-40 mt-2'>
             <SetsContainer />
         </div>
         

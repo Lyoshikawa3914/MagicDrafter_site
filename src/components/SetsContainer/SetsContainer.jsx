@@ -96,15 +96,15 @@ export const SetsContainer = () => {
     }
 
     return (
-        <div className='setsBody flex flex-col justify-center '>
-            <div className="text-5xl mb-10 tracking-normal font-bold">Discover Magic: the Gathering's rich history</div>
+        <div className='setsBody fade-in-element flex flex-col justify-center align-center w-full'>
+            <div className="text-5xl mb-10 font-bold">Discover Magic: the Gathering's rich history</div>
 
             {mtgSets ? (
-                <div className="grid justify-center align-middle items-center  gap-y-7 xs:gap-x-2 xs:grid-cols-2 sm:pl-10 sm:pr-7 sm:grid-cols-2 md:pl-0 md:grid-cols-3 md:gap-x-5 lg:grid-cols-3 xl:grid-cols-4 xl:gap-x-10 2xl:grid-cols-5">
+                <div className="outerContainer">
                     {mtgSets.map((set, index) => (
                         <div 
                             key={index}
-                            className="set-container drop-shadow-2xl self-center  rounded-lg flex justify-center items-center content-center"
+                            className="set-container drop-shadow-md rounded-lg justify-center items-center content-center self-center"
                             id={set.set_code}
                             onClick={() => fetchAllCards(set.set_code, set.name)}
                         >
@@ -115,7 +115,7 @@ export const SetsContainer = () => {
                                         className="image flex self-center "
                                         src={set.iconUrl}
                                         style={{
-                                            height: "300px",
+                                            height: "200px",
                                             // width: "200px",
                                             filter: "invert(80%) sepia(20%) saturate(3000%) hue-rotate(300deg) brightness(100%) contrast(90%)",
 
@@ -123,7 +123,7 @@ export const SetsContainer = () => {
                                             
                                         }}
                                     />
-                                    <div className="setCode text-center font-bold text-lg mt-3">{set.name}</div>
+                                    <div className="setCode text-center font-bold  mt-3">{set.name}</div>
                                 </div>
                                  
                             
