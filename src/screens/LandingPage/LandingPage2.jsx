@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { NavigationBar } from '../../components/NavigationBar/navigationBar';
 import { Footer } from '../../components/Footer/Footer';
 import "./LandingPage2.css"
@@ -19,7 +20,7 @@ export const LandingPage2 = () => {
                     </div>
                     
                     <div className='buttonsContainer'>
-                        <button className='button'>Explore Here</button>
+                        <button className='button'><Link  className='explore' to="/sets">Explore Here</Link></button>
                         <button className='button'>Learn To Draft</button>
                     </div>
                 </div>

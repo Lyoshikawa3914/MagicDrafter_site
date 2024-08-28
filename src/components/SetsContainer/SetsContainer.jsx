@@ -97,19 +97,19 @@ export const SetsContainer = () => {
 
     return (
         <div className='setsBody fade-in-element flex flex-col justify-center align-center w-full'>
-            <div className="text-5xl mb-10 font-bold">Discover Magic: the Gathering's rich history</div>
+            <div className="titleHeader text-5xl mb-14 font-bold flex justify-start ml-8">Discover Magic: the Gathering's sets</div>
 
             {mtgSets ? (
                 <div className="outerContainer">
                     {mtgSets.map((set, index) => (
                         <div 
                             key={index}
-                            className="set-container drop-shadow-md rounded-lg justify-center items-center content-center self-center"
+                            className="set-container  rounded-2xl justify-center items-center content-center self-center"
                             id={set.set_code}
                             onClick={() => fetchAllCards(set.set_code, set.name)}
                         >
                             
-                                <div className="setIcon  flex flex-col drop-shadow-md pb-7 rounded-lg ">
+                                <div className="setIcon  flex flex-col pb-7 rounded-lg ">
                                     
                                     <img 
                                         className="image flex self-center "
@@ -123,7 +123,7 @@ export const SetsContainer = () => {
                                             
                                         }}
                                     />
-                                    <div className="setCode text-center font-bold  mt-3">{set.name}</div>
+                                    <div className="setCode pt-7">{set.name}</div>
                                 </div>
                                  
                             

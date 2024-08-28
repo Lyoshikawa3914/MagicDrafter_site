@@ -10,7 +10,7 @@ import { Footer } from '../../components/Footer/Footer.jsx';
 
 export const SetsPage = () => {
     return (
-    <div className='setsPageBody fade-in-element absolute left-0 top-0 flex mb-64 gap-16 content-center justify-between align-middle'>
+    <div className='setsPageBody bg-white fade-in-element absolute left-0 top-0 flex mb-64 gap-16 content-center justify-between align-middle'>
         
         <div className='upperContainer gap-6 flex-col w-full flex content-center justify-center align-middle bg-white'>
             <div className=''>

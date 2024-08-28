@@ -49,16 +49,17 @@ export const SetPage2 = () => {
               <NavigationBar/>
           </div>
 
-          <div className='landingImage flex flex-col border border-solid-black justify-around align-middle items-center 
+          <div className='flex flex-col border border-solid-black rounded-3xl justify-around align-middle items-center 
           xs:ml-3 xs:mr-3 
           sm:ml-7 sm:mr-7 
           md:ml-10 md:mr-10 
           lg:ml-20 lg:mr-20
-          xl:ml-48 xl:mr-48'
-          
+          xl:ml-48 xl:mr-48
+          '
           style={{ backgroundImage: `url(../../img/blb_images/blb_f.webp)`,
            backgroundSize: 'cover',
-            backgroundPosition: 'center' }}
+            backgroundPosition: 'center',
+          height: '500px' }}
           >
             
               <div className='mtgSetNameTitle text-5xl font-medium'>
