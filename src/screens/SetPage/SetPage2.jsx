@@ -19,13 +19,13 @@ export const SetPage2 = () => {
   const navigate = useNavigate();
   const { mtgCards = [], mtgSetName, mtgCode } = location.state || {};
   const [loading, setLoading] = useState(true);
-  const [landingPic, setLandingPic] = useState(null);
-  const [sPic, setSPic] = useState(null);
-  const [aPic, setAPic] = useState(null);
-  const [bPic, setBPic] = useState(null);
-  const [cPic, setCPic] = useState(null);
-  const [dPic, setDPic] = useState(null);
-  const [fPic, setFPic] = useState(null);
+  const [Pic7, setPic7] = useState(null);
+  const [Pic1, setPic1] = useState(null);
+  const [Pic2, setPic2] = useState(null);
+  const [Pic3, setPic3] = useState(null);
+  const [Pic4, setPic4] = useState(null);
+  const [Pic5, setPic5] = useState(null);
+  const [Pic6, setPic6] = useState(null);
 
   
   useEffect(() => {
@@ -54,7 +54,13 @@ export const SetPage2 = () => {
         try {
           const basePath = `../../img/${mtgCode}_images`;
           const possibleExtenstions = ['jpeg', 'png', 'webp'];
-          const fetchedImages = [];
+          const imageStates = [
+            setPic1, setPic2, setPic3, 
+            setPic4, setPic5, setPic6, 
+            setPic7
+          ];
+
+
         } catch (error) {
           console.error('Error fetching images:', error);
         }
