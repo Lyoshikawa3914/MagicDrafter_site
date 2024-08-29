@@ -17,8 +17,15 @@ import { faCircleInfo } from '@fortawesome/free-solid-svg-icons';
 export const SetPage2 = () => {
   const location = useLocation();
   const navigate = useNavigate();
-  const { mtgCards = [], mtgSetName } = location.state || {};
+  const { mtgCards = [], mtgSetName, mtgCode } = location.state || {};
   const [loading, setLoading] = useState(true);
+  const [landingPic, setLandingPic] = useState(null);
+  const [sPic, setSPic] = useState(null);
+  const [aPic, setAPic] = useState(null);
+  const [bPic, setBPic] = useState(null);
+  const [cPic, setCPic] = useState(null);
+  const [dPic, setDPic] = useState(null);
+  const [fPic, setFPic] = useState(null);
 
   
   useEffect(() => {
@@ -40,6 +47,20 @@ export const SetPage2 = () => {
       </div>
     )
   }
+
+  useEffect(() =>{
+    if (mtgCode) {
+      const fetchImage = async () => {
+        try {
+          const basePath = `../../img/${mtgCode}_images`;
+          const possibleExtenstions = ['jpeg', 'png', 'webp'];
+          const fetchedImages = [];
+        } catch (error) {
+          console.error('Error fetching images:', error);
+        }
+      }
+    }
+  })
   
 
     return (

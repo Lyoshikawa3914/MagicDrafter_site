@@ -83,7 +83,7 @@ export const SetsContainer = () => {
             // setMtgImages(otherData);
 
             // This will navigate to SetPage2 with mtgCards and mtgImages as state
-            navigate('/set2', {state: {mtgCards: data, mtgSetName: setname} });
+            navigate('/set2', {state: {mtgCards: data, mtgSetName: setname, mtgCode: setCode} });
             
         } catch (err) {
             console.error("Error fetching all cards:", err);
