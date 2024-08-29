@@ -67,20 +67,20 @@ export const SetsContainer = () => {
             }
 
             // This will get a list of all images from the db based on the setCode
-            console.log(`Getting images for ${setCode}`)
-            const otherResponse = await fetch(`http://localhost:3001/api/SetImages/${setCode}`);
+            // console.log(`Getting images for ${setCode}`)
+            // const otherResponse = await fetch(`http://localhost:3001/api/SetImages/${setCode}`);
             
-            if (!otherResponse.ok) {
-                throw new Error(`Network response was not ok: ${otherResponse.statusText}`);
-            }
+            // if (!otherResponse.ok) {
+            //     throw new Error(`Network response was not ok: ${otherResponse.statusText}`);
+            // }
 
             const data = await response.json();
             console.log(data);
             setMtgCards(data);
 
-            const otherData = await otherResponse.json();
-            console.log(otherData)
-            setMtgImages(otherData);
+            // const otherData = await otherResponse.json();
+            // console.log(otherData)
+            // setMtgImages(otherData);
 
             // This will navigate to SetPage2 with mtgCards and mtgImages as state
             navigate('/set2', {state: {mtgCards: data, mtgSetName: setname} });
