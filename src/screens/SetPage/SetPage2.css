@@ -38,7 +38,18 @@
 
 .ratingContainer {
     transition: 0.1s ease-in-out;
+    display: flex;
+    border-radius: 20%;
+    justify-self: center;
+    align-content: center;
+    height: 384px;
+    width: 384px;
     
+    background-size:cover;
+    background-position: 50%;
+    background-repeat: no-repeat;
+    min-Height:100%;
+    min-Width:100%;
 }
 
 .ratingContainer:hover {

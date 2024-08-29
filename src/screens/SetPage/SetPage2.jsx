@@ -37,6 +37,46 @@ export const SetPage2 = () => {
     }
   }, [mtgSetName, navigate]);
 
+  useEffect(() =>{
+    if (mtgCode) {
+      const fetchImage = async () => {
+        try {
+          const basePath = `../../img/${mtgCode}_images`;
+          const possibleExtenstions = ['jpg','jpeg', 'png', 'webp'];
+          const imageStates = [
+            setPic1, setPic2, setPic3, 
+            setPic4, setPic5, setPic6, 
+            setPic7
+          ];
+
+          for (let i = 0; i < imageStates.length; i++) {
+            for (const ext of possibleExtenstions) {
+              let imageSet = false;
+              const url = `${basePath}/${mtgCode}_${i + 1}.${ext}`;
+              console.log(url)
+              const response = await fetch(url);
+
+              if (response.ok) {
+                const blob = await response.blob();
+                const objectUrl = URL.createObjectURL(blob);
+                imageStates[i](objectUrl);
+                console.log(imageStates[i](objectUrl))
+                imageSet = true;
+                break;
+              }
+            }
+          }
+
+
+        } catch (error) {
+          console.error('Error fetching images:', error);
+        }
+      };
+      fetchImage();
+    }
+    
+  }, [mtgCode]);
+  
   if (loading) {
     return (
       <div className="spinwheel flex absolute justify-center align-middle items-center self-center">
@@ -47,28 +87,6 @@ export const SetPage2 = () => {
       </div>
     )
   }
-
-  useEffect(() =>{
-    if (mtgCode) {
-      const fetchImage = async () => {
-        try {
-          const basePath = `../../img/${mtgCode}_images`;
-          const possibleExtenstions = ['jpeg', 'png', 'webp'];
-          const imageStates = [
-            setPic1, setPic2, setPic3, 
-            setPic4, setPic5, setPic6, 
-            setPic7
-          ];
-
-
-        } catch (error) {
-          console.error('Error fetching images:', error);
-        }
-      }
-    }
-  })
-  
-
     return (
       <div className='setPageBody absolute left-0 top-0 flex mb-64 gap-16 content-center justify-between align-middle'
      >
@@ -83,13 +101,14 @@ export const SetPage2 = () => {
           lg:ml-20 lg:mr-20
           xl:ml-48 xl:mr-48
           '
-          style={{ backgroundImage: `url(../../img/blb_images/blb_f.webp)`,
-           backgroundSize: 'cover',
+          style={{ backgroundImage: `url(${Pic6 })`,
+            backgroundSize: 'cover',
             backgroundPosition: 'center',
-          height: '500px' }}
+            height: '740px',
+         }}
           >
-            
-              <div className='mtgSetNameTitle text-5xl font-medium'>
+              
+              <div className='mtgSetNameTitle text-5xl font-medium' >
                 {console.log(mtgSetName)}
                 {mtgSetName ? (`${mtgSetName}`) : ('')}
               </div>
@@ -121,30 +140,43 @@ export const SetPage2 = () => {
                   </div>
               </div>
 
-              <div className='grid justify-center align-middle items-center lg:grid-cols-2 xl:grid-cols-3  gap-16 ml-40 mr-40 mt-10'>
+              <div className='grid justify-center align-middle items-center lg:grid-cols-2 xl:grid-cols-3  gap-16 ml-40 mr-40 mt-10'
+              >
                   
-                  <div className='ratingContainer sContainer drop-shadow-xl flex rounded-lg bg-white justify-self-center align-center items-center h-96 w-96'>
-                    <div className='bg-slate-400 h-40 w-full'></div>
+                  <div className='ratingContainer sContainer drop-shadow-xl flex rounded-lg bg-white justify-self-center align-center items-center h-96 w-96'
+                  style={{backgroundImage:`url(${Pic1})`, 
+                  }}>
+                    <div className=''></div>
                   </div>
 
-                  <div className='ratingContainer aContainer drop-shadow-xl flex rounded-lg bg-white justify-self-center align-center items-center h-96 w-96'>
-                    <div className='bg-slate-400 h-40 w-full'></div>
+                  <div className='ratingContainer aContainer drop-shadow-xl flex rounded-lg bg-white justify-self-center align-center items-center h-96 w-96'
+                  style={{backgroundImage:`url(${Pic2})`, 
+                }}>
+                    <div className=''></div>
                   </div>
 
-                  <div className='ratingContainer bContainer flex rounded-lg drop-shadow-xl bg-white justify-self-center align-center items-center h-96 w-96'>
-                    <div className='bg-slate-400 h-40 w-full'></div>
+                  <div className='ratingContainer bContainer flex rounded-lg drop-shadow-xl bg-white justify-self-center align-center items-center h-96 w-96'
+                  style={{backgroundImage:`url(${Pic3})`, 
+                }}>
+                    <div className=''></div>
                   </div>
 
-                  <div className='ratingContainer cContainer flex rounded-lg drop-shadow-xl bg-white justify-self-center align-center items-center h-96 w-96'>
-                    <div className='bg-slate-400 h-40 w-full'></div>
+                  <div className='ratingContainer cContainer flex rounded-lg drop-shadow-xl bg-white justify-self-center align-center items-center h-96 w-96'
+                  style={{backgroundImage:`url(${Pic4})`, 
+                }}>
+                    <div className=''></div>
                   </div>
 
-                  <div className='ratingContainer dContainer flex rounded-lg drop-shadow-xl bg-white justify-self-center align-center items-center h-96 w-96'>
-                    <div className='bg-slate-400 h-40 w-full'></div>
+                  <div className='ratingContainer dContainer flex rounded-lg drop-shadow-xl bg-white justify-self-center align-center items-center h-96 w-96'
+                  style={{backgroundImage:`url(${Pic5})`, 
+                }}>
+                    <div className=''></div>
                   </div>
 
-                  <div className='ratingContainer fContainer flex rounded-lg drop-shadow-xl bg-white justify-self-center align-center items-center h-96 w-96'>
-                    <div className='bg-slate-400 h-40 w-full'></div>
+                  <div className='ratingContainer fContainer flex rounded-lg drop-shadow-xl bg-white justify-self-center align-center items-center h-96 w-96'
+                  style={{backgroundImage:`url(${Pic6})`, 
+                }}>
+                    <div className=''></div>
                   </div>
                     
                 </div>
