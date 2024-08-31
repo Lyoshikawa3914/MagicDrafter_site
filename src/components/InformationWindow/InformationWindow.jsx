@@ -2,6 +2,12 @@ import React from 'react';
 import { CloseIcon } from '../CloseIcon/CloseIcon';
 import "./InformationWindow.css"
 
+/**
+* Information window that dissplays how to determine the rating of a card.
+* @param {Object} props - The component props.
+* @param {Function} props.onClose - Function to close the window.
+* @returns {JSX.Element} The rendered component.
+*/
 export const InformationWindow =({ onClose }) => {
     
 

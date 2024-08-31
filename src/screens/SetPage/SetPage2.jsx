@@ -14,7 +14,8 @@ import { InformationWindow } from '../../components/InformationWindow/Informatio
  * 
  * This page will use Express middleware to get data from db.
  * 
- * 
+ * 'visible' prop/useState will allow popup windows to be visible or invisible after clicking buttons.
+ * The 'handleButtonClick' function will control the visiblity functionality by 
  * @returns 
  */
 export const SetPage2 = () => {
