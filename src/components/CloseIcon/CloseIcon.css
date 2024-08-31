@@ -1,0 +1,25 @@
+.CloseContainer {
+    margin-top: -0.5em;
+}
+
+.CloseContainer:hover {
+    cursor: pointer;
+}
+
+.Line {
+    width: 1.9rem;
+    height:0.15rem;
+    background-color: black;
+}
+
+.CloseContainer .Line:nth-child(1){
+    transform: rotate(45deg);
+    margin-bottom: -1px;
+    background-color: red;
+    
+    
+}
+
+.CloseContainer .Line:nth-child(2){
+    transform: rotate(-45deg);
+}

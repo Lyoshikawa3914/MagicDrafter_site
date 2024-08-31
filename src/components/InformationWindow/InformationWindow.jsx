@@ -1,9 +1,14 @@
 import React from 'react';
+import { CloseIcon } from '../CloseIcon/CloseIcon';
 
 export const InformationWindow =() => {
     return (
-        <div className='bg-white border rounded'>
-            <h1>Ratings</h1>
+        <div className='bg-white border rounded p-5'>
+            <div className='absolute top-5 right-5 p-5'>
+                <CloseIcon/>
+            </div>
+            
+            <div className='text-4xl mb-3'>Ratings</div>
             <p className='mb-10'>
                 These ratings serve as guidelines that will help players decide on what cards to take during the draft.
                 All cards are rated in a vacuum. 
