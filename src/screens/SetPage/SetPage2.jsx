@@ -13,6 +13,8 @@ import { InformationWindow } from '../../components/InformationWindow/Informatio
  * Each card will be categorized by their rating ranging from 'S, A, B, C, D, and F', 'S' being the best and 'F' being the worst
  * 
  * This page will use Express middleware to get data from db.
+ * 
+ * 
  * @returns 
  */
 export const SetPage2 = () => {
