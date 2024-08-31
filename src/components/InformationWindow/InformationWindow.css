@@ -1,0 +1,9 @@
+.ratingList {
+    display: flex;
+    justify-content: start;
+    width: 100%
+}
+li {
+    display: flex;
+    justify-self: start;
+}

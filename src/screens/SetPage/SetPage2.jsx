@@ -6,6 +6,7 @@ import { Footer } from '../../components/Footer/Footer.jsx';
 import './SetPage2.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCircleInfo } from '@fortawesome/free-solid-svg-icons';
+import { InformationWindow } from '../../components/InformationWindow/InformationWindow.jsx';
 
 /**
  * This page contains contains the card ratings of cards that will be accessed from aws relational db. 
@@ -26,6 +27,12 @@ export const SetPage2 = () => {
   const [Pic4, setPic4] = useState(null);
   const [Pic5, setPic5] = useState(null);
   const [Pic6, setPic6] = useState(null);
+
+  const [visible, setVisible] = useState({
+    ratingsAllPopUp: false,
+    infoPopUp: false,
+    ratingsPopUp: false,
+  });
 
   
   useEffect(() => {
@@ -76,6 +83,13 @@ export const SetPage2 = () => {
     }
     
   }, [mtgCode]);
+
+  const handleButtonClick = (popName) => {
+    setVisible((prev) => ({
+      ...prev,
+      [popName]: !prev[popName],
+    }));
+  };
   
   if (loading) {
     return (
@@ -86,7 +100,9 @@ export const SetPage2 = () => {
         </svg>
       </div>
     )
-  }
+    }
+
+     
     return (
       <div className='setPageBody absolute left-0 top-0 flex mb-64 gap-16 content-center justify-between align-middle'
      >
@@ -123,16 +139,21 @@ export const SetPage2 = () => {
                   <div className='flex self-center text-3xl font-medium xl:mr-28'>
                     Ratings
                     
-                    <div className='infoIcon flex pt-2 self-center ml-3'>
+                    <div className='infoIcon flex pt-2 self-center ml-3' onClick={() => handleButtonClick('infoPopUp')}>
                       <FontAwesomeIcon
-                      icon={faCircleInfo} 
-                      size='xs' 
-                      style={{color:"86D2F9"}} 
-                      >
+                        icon={faCircleInfo} 
+                        size='xs' 
+                        style={{color:"86D2F9"}}>
 
                       </FontAwesomeIcon>
                     </div>
                   </div>
+
+                  
+                  {visible.infoPopUp && 
+                  <div className='absolute z-10 '><InformationWindow/></div>
+                  
+                  }
                   
                   
                   <div>
@@ -181,8 +202,10 @@ export const SetPage2 = () => {
                     
                 </div>
                 
-                
             </div>
+            
+            
+
             
             <Footer/>
             
