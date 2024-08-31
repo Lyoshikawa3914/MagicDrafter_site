@@ -1,9 +1,13 @@
-import React from 'react';
+
+import { React, useState } from 'react';
 import './CloseIcon.css';
 
-export const CloseIcon = () => {
+export const CloseIcon = ({ onClose }) => {
+    
+    
+
     return (
-        <div className='CloseContainer'>
+        <div className='CloseContainer' onClick={onClose}>
             
             <div className='Line'></div>
             

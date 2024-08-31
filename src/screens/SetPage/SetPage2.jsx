@@ -151,7 +151,9 @@ export const SetPage2 = () => {
 
                   
                   {visible.infoPopUp && 
-                  <div className='absolute z-10 '><InformationWindow/></div>
+                  <div className='absolute z-10 '>
+                    <InformationWindow onClose={() => handleButtonClick('infoPopUp')}/>
+                  </div>
                   
                   }
                   
