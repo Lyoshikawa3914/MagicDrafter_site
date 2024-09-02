@@ -1,5 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 
+@keyframes fadeInAnimation {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
 .ratingHeader {
     font-family: "Roboto";
 }
@@ -20,4 +29,20 @@ li {
     justify-self: start;
     margin-left: 2em;
 
+}
+
+.infoContainer {
+    animation: fadeInAnimation ease-in-out 0.25s;
+}
+.closeIconButton {
+    
+    position: absolute;
+    right: 1em;
+    top: 0.5em;
+    background-color: initial;
+    color:initial;
+    border: initial;
+    
+    
+    
 }

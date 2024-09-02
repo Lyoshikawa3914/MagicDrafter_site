@@ -1,27 +1,53 @@
+@keyframes fadeInAnimation {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
 
 
 .CloseContainer {
-    margin-top: -0.5em;
+    margin-top: 0.5em;
+    height:100%;
+    background-color: initial;
+    color:initial;
+    border: none;
+    outline: none;
+}
+
+.CloseContainer:focus, .CloseContainer:active {
+    
+    color:initial;
+    border: none;
+    outline: none;
 }
 
 .CloseContainer:hover {
     cursor: pointer;
+    background-color: initial;
+    color:initial;
+    border: initial;
 }
 
 .Line {
     width: 1.9rem;
     height:0.15rem;
     background-color: black;
+    
+    
 }
 
 .CloseContainer .Line:nth-child(1){
     transform: rotate(45deg);
-    margin-bottom: -1px;
-    background-color: red;
+    margin-bottom: -2.15em;
+    background-color: blue;
     
     
 }
 
 .CloseContainer .Line:nth-child(2){
     transform: rotate(-45deg);
+    margin-top: 2em;
 }

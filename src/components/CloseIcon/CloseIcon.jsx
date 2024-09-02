@@ -10,11 +10,11 @@ import './CloseIcon.css';
 export const CloseIcon = ({ onClose }) => {
     
     return (
-        <div className='CloseContainer' onClick={onClose}>
+        <button className='CloseContainer' onClick={onClose}>
             
             <div className='Line'></div>
             
             <div className='Line'></div>
-        </div>
+        </button>
     )
 }

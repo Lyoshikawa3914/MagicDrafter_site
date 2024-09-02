@@ -8,8 +8,37 @@
     display: flex;
     flex-direction: column;
     width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    justify-content: center;
+    align-content: center;
+    margin-bottom: 256px;
+    gap: 64px;
     
-    
+}
+.setPageBody::before {
+    content: "";
+    position: fixed; /* Fixed to cover the entire viewport */
+    top: 0;
+    left: 0;
+    width: 100vw;  /* Full width of the viewport */
+    height: 100vh; /* Full height of the viewport */
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black */
+    z-index: 5; /* Below the infoContainer's z-index */
+    pointer-events: none; /* Prevent it from blocking clicks */
+    display: none; /* Initially hidden */
+}
+.modalActive {
+    overflow: hidden; /* Disable scrolling */
+}
+
+.modalActive::before {
+    display: block; /* Show the darkened overlay when modalActive is applied */
+}
+
+.overflow-hidden {
+    overflow:hidden !important;
 }
 
 .mtgSetNameTitle {
@@ -17,6 +46,8 @@
     animation-iteration-count: 1;
     animation-fill-mode: forwards;
 }
+
+
 
 @keyframes fadeInAnimation {
     0% {
@@ -75,5 +106,16 @@
 .infoIcon:hover {
     cursor: pointer;
     transform: scale(1.2);
-    z-index: 100;
+    z-index: 10;
 }
+
+.infoContainer {
+    animation: fadeInAnimation ease-in-out 0.25s;
+    top: 30%;
+    left: 20%;
+    overflow: hidden;
+    position: fixed;
+    
+}
+
+

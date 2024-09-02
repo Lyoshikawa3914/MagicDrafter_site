@@ -88,10 +88,18 @@ export const SetPage2 = () => {
   }, [mtgCode]);
 
   const handleButtonClick = (popName) => {
-    setVisible((prev) => ({
-      ...prev,
-      [popName]: !prev[popName],
-    }));
+    setVisible((prev) => {
+      const newVisibility = !prev.infoPopUp;
+      if (newVisibility) {
+        document.body.classList.add('overflow-hidden');
+      } else {
+        document.body.classList.remove('overflow-hidden');
+      }
+      return {
+        ...prev,
+        infoPopUp: newVisibility,
+      };
+    });
   };
   
   if (loading) {
@@ -107,7 +115,7 @@ export const SetPage2 = () => {
 
      
     return (
-      <div className='setPageBody absolute left-0 top-0 flex mb-64 gap-16 content-center justify-between align-middle'
+      <div className={`setPageBody ${visible.infoPopUp ? 'modalActive' : ''} `}
      >
           <div className='upperContainer gap-6 flex-col w-full flex content-center justify-center align-middle bg-white'>
               <NavigationBar/>
@@ -154,7 +162,7 @@ export const SetPage2 = () => {
 
                   
                   {visible.infoPopUp && 
-                  <div className='absolute z-10 '>
+                  <div className='infoContainer absolute z-10 '>
                     <InformationWindow onClose={() => handleButtonClick('infoPopUp')}/>
                   </div>
                   

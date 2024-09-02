@@ -12,8 +12,8 @@ export const InformationWindow =({ onClose }) => {
     
 
     return (
-        <div className='bg-white border rounded p-5'>
-            <div className='absolute top-5 right-5 p-5'>
+        <div className='infoContainer bg-white border rounded p-5 z-20'>
+            <div className='closeIconButton '>
                 <CloseIcon onClose={onClose}/>
             </div>
             
