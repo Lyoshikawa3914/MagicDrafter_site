@@ -1,0 +1,19 @@
+.ratingComponentBody {
+    background-color: white;
+    height: 500px;
+}
+
+.ratingUpperContainer {
+    display: flex;
+    flex-direction: column;
+}
+
+.ratingTitleContainer {
+    display: flex;
+    justify-content: space-between;
+}
+
+.dropDownContainer {
+    display: flex;
+    justify-content: space-around;
+}

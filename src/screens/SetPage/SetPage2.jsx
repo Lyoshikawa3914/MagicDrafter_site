@@ -7,6 +7,7 @@ import './SetPage2.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCircleInfo } from '@fortawesome/free-solid-svg-icons';
 import { InformationWindow } from '../../components/InformationWindow/InformationWindow.jsx';
+import { RatingComponent } from '../../components/RatingComponent/RatingComponent.jsx';
 
 /**
  * This page contains contains the card ratings of cards that will be accessed from aws relational db. 
@@ -101,6 +102,21 @@ export const SetPage2 = () => {
       };
     });
   };
+
+  const handleRatingButtonClick = (popName) => {
+    setVisible((prev) => {
+      const newVisibility = !prev.ratingsPopUp;
+      if (newVisibility) {
+        document.body.classList.add('overflow-hidden');
+      } else {
+        document.body.classList.remove('overflow-hidden');
+      }
+      return {
+        ...prev,
+        ratingsPopUp: newVisibility,
+      };
+    });
+  };
   
   if (loading) {
     return (
@@ -178,10 +194,15 @@ export const SetPage2 = () => {
               >
                   
                   <div className='ratingContainer sContainer drop-shadow-xl flex rounded-lg bg-white justify-self-center align-center items-center h-96 w-96'
-                  style={{backgroundImage:`url(${Pic1})`, 
-                  }}>
+                  style={{backgroundImage:`url(${Pic1})`,}}
+                  onClick={() => handleRatingButtonClick('ratingsPopUp')}>
                     <div className=''></div>
                   </div>
+
+                  {visible.ratingsPopUp && 
+                  <div className='ratingComponentContainer'>
+                    <RatingComponent onClose={() => handleRatingButtonClick('ratingsPopUp')}/>
+                  </div>}
 
                   <div className='ratingContainer aContainer drop-shadow-xl flex rounded-lg bg-white justify-self-center align-center items-center h-96 w-96'
                   style={{backgroundImage:`url(${Pic2})`, 

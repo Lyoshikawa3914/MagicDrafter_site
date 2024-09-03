@@ -118,4 +118,14 @@
     
 }
 
+.ratingComponentContainer {
+    animation: fadeInAnimation ease-in-out 0.25s;
+    top: 30%;
+    left: 20%;
+    overflow: hidden;
+    position: fixed;
+    z-index: 10;
+    
+}
+
 

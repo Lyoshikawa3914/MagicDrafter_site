@@ -18,7 +18,6 @@ export const ColorDropdown = () => {
     return (
         <div>
             <Select
-                
                 options={ColorOptions} // Options to display in the dropdown
                 value={selectColor}
                 onChange = {handleChangeColor}
