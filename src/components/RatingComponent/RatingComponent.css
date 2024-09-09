@@ -184,11 +184,17 @@
     position: absolute;
     right: 1em;
     display: none;
+    transition: transform 0.2s ease;
+  }
+
+  .iconArrowContainer.rotate {
+    transform: rotate(90deg);
   }
 
   .filterMenuContainer:hover .iconArrowContainer{
     display: block;
   }
+
 
   .dropDownContainer.visible {
     display: block;

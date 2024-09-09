@@ -26,6 +26,11 @@ export const RatingComponent = ({onClose}) => {
     const [visibleRarity, setVisibleRarity ] = useState(false);
 
     const [activeFilter, setActiveFilter] = useState('');
+    
+    const [rotateColorIcon, setRotateColorIcon] = useState(false);
+    const [rotateCostIcon, setRotateCostIcon] = useState(false);
+    const [rotateTypeIcon, setRotateTypeIcon] = useState(false);
+    const [rotateRarityIcon, setRotateRarityIcon] = useState(false);
 
     const closeButtonFunction = () => {
         setVisibleFilterMenu(!visibleFilterMenu);
@@ -33,23 +38,33 @@ export const RatingComponent = ({onClose}) => {
         setVisibleColor(false);
         setVisibleCost(false);
         setVisibleRarity(false);
-        setVisibleRarity(false);
+        setVisibleType(false);
+        
+        setRotateColorIcon(false);
+        setRotateRarityIcon(false);
+        setRotateTypeIcon(false);
+        setRotateCostIcon(false);
+        
         setActiveFilter('')
     }
     const colorFilterFunction = () => {
         setVisibleColor(!visibleColor);
+        setRotateColorIcon(!rotateColorIcon);
         setActiveFilter('color');
     }
     const costFilterFunction = () => {
         setVisibleCost(!visibleCost);
+        setRotateCostIcon(!rotateCostIcon);
         setActiveFilter('cost');
     }
     const typeFilterFunction = () => {
         setVisibleType(!visibleType);
+        setRotateTypeIcon(!rotateTypeIcon);
         setActiveFilter('type');
     }
     const rarityFilterFunction = () => {
         setVisibleRarity(!visibleRarity);
+        setRotateRarityIcon(!rotateRarityIcon);
         setActiveFilter('rarity');
     }
 
@@ -73,14 +88,7 @@ export const RatingComponent = ({onClose}) => {
                         <div className='tierContainer '>#-Tier</div>
                     </div>
 
-                    <div className='dropDownContainer'>
-                
-                        {/* <div className='dropDownBar'><ColorDropdown/></div>
-                        <div className='dropDownBar'><ManaValueDropdown/></div> 
-                        <div className='dropDownBar'><RarityDropdown/></div>
-                        <div className='dropDownBar'><TypeDropdown/></div> */}
-
-                    </div>
+                    
                     
 
                     <div className='closeIconContainer'>
@@ -114,7 +122,7 @@ export const RatingComponent = ({onClose}) => {
 
                             </div>
                             
-                            <div className='iconArrowContainer' >
+                            <div className={`iconArrowContainer ${rotateColorIcon ? 'rotate' : ''}`} >
                                 <FontAwesomeIcon icon={faPlay} size='sm'/>
                             </div>
                             {console.log(activeFilter)}
@@ -139,7 +147,7 @@ export const RatingComponent = ({onClose}) => {
                                 
                             </div>
 
-                            <div className='iconArrowContainer'>
+                            <div className={`iconArrowContainer ${rotateCostIcon ? 'rotate' : ''}`}>
                                     <FontAwesomeIcon icon={faPlay} size='sm'/>
                             </div>
                         </div>
@@ -159,7 +167,7 @@ export const RatingComponent = ({onClose}) => {
                                 
                             </div>
 
-                            <div className='iconArrowContainer'>
+                            <div className={`iconArrowContainer ${rotateTypeIcon ? 'rotate' : ''}`}>
                                 <FontAwesomeIcon icon={faPlay} size='sm'/>
                             </div>
                         </div>
@@ -178,7 +186,7 @@ export const RatingComponent = ({onClose}) => {
                                 <div>Rarity</div>
                                 
                             </div>
-                            <div className='iconArrowContainer'>
+                            <div className={`iconArrowContainer ${rotateRarityIcon ? 'rotate' : ''}`}>
                                 <FontAwesomeIcon icon={faPlay} size='sm'/>
                             </div>
                         </div>
