@@ -23,7 +23,9 @@ export const ColorDropdown = () => {
                 onChange = {handleChangeColor}
                 isMulti={true}
                 placeholder='Color'
-            />
+
+                
+                />
         </div>
         
     );

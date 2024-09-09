@@ -9,6 +9,8 @@ import { SetPage2 } from './screens/SetPage/SetPage2.jsx';
 import {SetsPage} from './screens/SetsPage/SetsPage.jsx';
 import { ArticlePage } from './screens/ArticlePage/ArticlePage.jsx';
 import { ArticlesPage } from './screens/ArticlesPage/ArticlesPage.jsx';
+
+
 //import {SetPageRating} from './screens/SetPageRating/SetPageRating.jsx'
 
 import { TestScreen } from './TestScreen.jsx'
@@ -20,6 +22,8 @@ ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <Router>
       <Routes>
+      {/* <Route path="/practice" element ={<practiceApp/>}/> */}
+
         <Route path="/landing" element ={<LandingPage/>}/>
 
         <Route path="/" element={<LandingPage2/>}/>
