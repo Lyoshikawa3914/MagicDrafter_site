@@ -89,16 +89,16 @@ export const RatingComponent = ({onClose}) => {
                     </div>
 
                     
-                    
-
                     <div className='closeIconContainer'>
                         <CloseIcon onClose={onClose}/>
                     </div>
                   
             </div>
-            <div className='ratinglowerContainer'>
+            
+            <div className='ratinglowerContainer '>
                 <div className={`filterMenuContainer ${visible ? 'expanded': ''}`}>
-
+                    <div className='filterTitleHoverContainer'>Filter</div>
+                    <div className={`filterTitleContainer ${visible ? 'appear': ''}`}>Filter</div>
                     {console.log(visible)}
 
                     <div>
@@ -119,8 +119,9 @@ export const RatingComponent = ({onClose}) => {
                             <FontAwesomeIcon icon={faPalette} size='2xl'></FontAwesomeIcon> 
                             <div className={`filterWords ${activeFilter === 'colors' ? 'visible' : ''}`}>
                                 <div>Colors</div>
-
+                               
                             </div>
+                            
                             
                             <div className={`iconArrowContainer ${rotateColorIcon ? 'rotate' : ''}`} >
                                 <FontAwesomeIcon icon={faPlay} size='sm'/>
@@ -199,8 +200,8 @@ export const RatingComponent = ({onClose}) => {
 
                      { visible ?
                         <div className='ratingButtonContainer'>
-                            <div><button>Enter</button></div>
-                            <div><button>Clear All</button></div>
+                            <div className='w-full'><button>Enter</button></div>
+                            {/* <div><button>Clear All</button></div> */}
                         </div>
                         :
                         ''

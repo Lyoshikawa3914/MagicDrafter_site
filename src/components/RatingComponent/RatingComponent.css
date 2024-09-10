@@ -73,15 +73,15 @@
     display: flex;
     flex-direction: column;
     gap: 10px;
-    width: 3%;
-    
+    width: 50px;
+    transition: 0.2s ease-in-out;
 }
 
 .filterMenuContainer:hover {
-    width: 12%;
+    width: 250px;
 }
 .filterMenuContainer.expanded {
-  width: 13%;
+  width: 250px;
 }
 
 
@@ -97,7 +97,7 @@
   }
   
   .filterWords {
-     display: flex;
+    display: flex;
     flex-direction: row;
     opacity: 0;
     visibility: hidden; /* Hide without removing from layout */
@@ -108,12 +108,7 @@
     font-weight: 500;
   }
 
-  .filterWords.visible {
-    display: block;
-    opacity: 1;
-    visibility: visible;
-    transform: translate(0);
-  }
+  
   
   .filterName:hover .filterWords {
     opacity: 1;
@@ -122,6 +117,13 @@
     visibility: visible;
     padding-left: 1em;
     
+  }
+  .filterName .filterWords.visible {
+    display: block;
+    opacity: 1;
+    visibility: visible;
+    transform: translate(100%);
+    background-color: red;
   }
   
   .filterName:hover {
@@ -136,15 +138,46 @@
     font-family: 'Roboto';
     font-weight: 500;
     font-size: x-large;
-    margin-left: 0.5em;
-    margin-top: 0.5em;
+    padding-left: 0.5em;
+    padding-bottom: 0.5em;
+    margin-top: 1em;
     animation: slideInFromLeftTitle 0.5s forwards;
     display: none;
     position: absolute;
+    top: -3em;
+    background-color: rgb(156, 217, 254);
+    width: 100%;
+    transition: 0.2s ease-in-out;
+    border-radius: 5px 5px 0 0;
+    
+  }
+
+  .filterTitleHoverContainer {
+    font-family: 'Roboto';
+    font-weight: 500;
+    font-size: x-large;
+    padding-left: 0.5em;
+    padding-bottom: 0.5em;
+    margin-top: 1em;
+    animation: slideInFromLeftTitle 0.5s forwards;
+    display: none;
+    position: absolute;
+    top: -3em;
+    border-radius: 5px 5px 0 0;
+    background-color: rgb(156, 217, 254);
+    transition: 0.2s ease-in-out;
+  }
+
+  .filterMenuContainer:hover .filterTitleHoverContainer {
+    display: flex;
+    justify-content: center;
   }
 
   .filterTitleContainer.appear {
     display: flex;
+    justify-content: start;
+    align-items: center;
+    
   }
 
   .filterMenuContainer:hover .filterTitleContainer{
@@ -153,13 +186,14 @@
 
   .ratingBackButtonContainer {
     position: absolute;
-    right:-2em;
-    top: -2em;
+    right:0;
+    top: -4.9em;
+    right: -1.8em;
     display: flex;
     justify-content: end;
     padding: 10px;
     margin-top: 0.5em;
-
+    z-index: 100;
     display: none;
   }
 
@@ -203,10 +237,22 @@
   .ratingButtonContainer {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: center;
+    align-content: center;
+    width: 100%;
+    padding-bottom: 1em;
   }
 
   .ratingButtonContainer button {
     background-color: rgb(156, 217, 254);
-    
+    width: 70%;
+    font-size: medium;
   }
+
+  @media screen and (max-width: 1240px) {
+    .filterMenuContainer {
+      left: 0;
+    }
+  }
+
+
