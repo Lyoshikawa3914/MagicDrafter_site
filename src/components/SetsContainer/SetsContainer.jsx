@@ -31,17 +31,17 @@ export const SetsContainer = () => {
         const fetchData = async () => {
             try {
                 const response = await fetch('http://localhost:3001/api/NameSymbolCode');
-                const response_count = await fetch('http://localhost:3001/api/count');
+                // const response_count = await fetch('http://localhost:3001/api/count');
 
-                if (!response.ok || !response_count.ok) {
+                if (!response.ok) {
                     throw new Error(`Network response was not ok: ${response.statusText}`);
                 }
 
                 const data = await response.json();
-                const data_count = await response_count.json();
+                //const data_count = await response_count.json();
 
                 setMtgSets(data);
-                setCount(data_count);
+                // setCount(data_count);
             } catch (err) {
                 console.error("Error fetching data:", err);
                 setError(err);
@@ -66,20 +66,12 @@ export const SetsContainer = () => {
                 throw new Error(`Network response was not ok: ${response.statusText}`);
             }
 
-            // This will get a list of all images from the db based on the setCode
-            // console.log(`Getting images for ${setCode}`)
-            // const otherResponse = await fetch(`http://localhost:3001/api/SetImages/${setCode}`);
-            
-            // if (!otherResponse.ok) {
-            //     throw new Error(`Network response was not ok: ${otherResponse.statusText}`);
-            // }
+        
 
             const data = await response.json();
             console.log(data);
             setMtgCards(data);
 
-            // const otherData = await otherResponse.json();
-            // console.log(otherData)
             // setMtgImages(otherData);
 
             // This will navigate to SetPage2 with mtgCards and mtgImages as state
@@ -104,7 +96,7 @@ export const SetsContainer = () => {
                     {mtgSets.map((set, index) => (
                         <div 
                             key={index}
-                            className="set-container  rounded-2xl justify-center items-center content-center self-center"
+                            className="set-container rounded-2xl justify-center items-center content-center self-center"
                             id={set.set_code}
                             onClick={() => fetchAllCards(set.set_code, set.name)}
                         >

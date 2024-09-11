@@ -13,7 +13,7 @@ app.use(cors());
 app.use(express.json());
 
 // Register the routes
-countRoute(app);
+// countRoute(app);
 SetNameSymbolAndCodeRoute(app);
 GetAllCardsRoute(app);
 SetImagesRoute(app);
