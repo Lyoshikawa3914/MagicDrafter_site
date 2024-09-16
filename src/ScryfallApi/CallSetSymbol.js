@@ -5,7 +5,7 @@
 
 
 const baseUrl = 'https://api.scryfall.com/sets/';
-const setCode = 'MKM'
+const setCode = 'DSK'
 
 export async function CallSetSymbol() {
     try {

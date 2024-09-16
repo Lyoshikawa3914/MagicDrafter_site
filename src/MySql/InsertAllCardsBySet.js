@@ -1,13 +1,13 @@
 import { CallGetAllCardsFromSet } from '../ScryfallApi/CallGetAllCardsFromSet.js';
 import {AwsMySqlConnect} from './AwsMySqlConnect.js';
-import { MySqlConnect } from './MySqlConnect.js';
+
 
 /**
  * This function will connect to the db, access the FetchCardData function, and will insert card 
  * data into the db
  */
 export async function InsertAllCardsBySet() {
-    const set_code = 'BLB';
+    const set_code = 'DSK';
     let connection;
 
     try {

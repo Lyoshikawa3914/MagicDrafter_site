@@ -6,7 +6,7 @@ export async function GetSetNameSymbolAndCode() {
     try {
         connection = await AwsMySqlConnect();
         const [rows] = await connection.query(
-            `SELECT * FROM mtg_draft_db.setname`
+            `SELECT * FROM mtg_draft_db.setname ORDER BY release_date DESC`
         )
         //console.log(rows)
         return rows

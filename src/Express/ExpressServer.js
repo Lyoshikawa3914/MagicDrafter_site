@@ -2,7 +2,7 @@
 import express from 'express';
 import cors from 'cors';
 import { GetAllCardsRoute } from './GetAllCardsRoute.js';
-import { countRoute } from './CountRoute.js';
+import { GetAllCardsByRatingRoute } from './GetAllCardsByRatingRoute.js';
 import { SetNameSymbolAndCodeRoute } from './SetNameSymbolCodeRoute.js';
 import { SetImagesRoute } from './SetImagesRoute.js';
 
@@ -13,7 +13,7 @@ app.use(cors());
 app.use(express.json());
 
 // Register the routes
-// countRoute(app);
+GetAllCardsByRatingRoute(app);
 SetNameSymbolAndCodeRoute(app);
 GetAllCardsRoute(app);
 SetImagesRoute(app);

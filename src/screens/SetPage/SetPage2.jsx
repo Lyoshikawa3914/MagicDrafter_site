@@ -8,6 +8,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCircleInfo } from '@fortawesome/free-solid-svg-icons';
 import { InformationWindow } from '../../components/InformationWindow/InformationWindow.jsx';
 import { RatingComponent } from '../../components/RatingComponent/RatingComponent.jsx';
+import { CallGetAllCardsFromSet } from '../../ScryfallApi/CallGetAllCardsFromSet.js';
 
 /**
  * This page contains contains the card ratings of cards that will be accessed from aws relational db. 
@@ -23,6 +24,14 @@ export const SetPage2 = () => {
   const location = useLocation();
   const navigate = useNavigate();
   const { mtgCards = [], mtgSetName, mtgCode } = location.state || {};
+  
+  const [sRate, setSRate] = useState(null);
+  const [aRate, setARate] = useState(null);
+  const [bRate, setBRate] = useState(null)
+  const [cRate, setCRate] = useState(null);
+  const [dRate, setDRate] = useState(null);
+  const [fRate, setFRate] = useState(null);
+
   const [loading, setLoading] = useState(true);
   const [Pic7, setPic7] = useState(null);
   const [Pic1, setPic1] = useState(null);
@@ -85,6 +94,64 @@ export const SetPage2 = () => {
       };
       fetchImage();
     }
+    
+  }, [mtgCode]);
+
+  useState(() => {
+    const fetchData = async () => {
+      try {
+        const fetchRating = async (mtgCode, rating) => {
+          const response = await fetch(`http://localhost:3001/api/GetAllCardsByRating/${mtgCode}/${rating}`);
+          
+          if (!response.ok) {
+            // Handle non-200 responses (e.g., 404, 500)
+            const errorMessage = await response.json();
+            console.error(`Error fetching cards: ${errorMessage.message}`);
+            return null;  // or handle the error as needed
+        }
+        
+          const result = await response.json();
+          return result;
+        };
+        // console.log("mtgCards");
+        // console.log(mtgCards);
+  
+        // const scryfallCards = await CallGetAllCardsFromSet(mtgCode);
+        //console.log("scryfall cards: ");
+  
+        // relevant keys: 
+        // 'name', 'image_uris.small', 'image_uris.normal', 'image_uris.large',
+        // 'image_uris.art_crop', 'colors', 'rarity', 'cmc', 'artist', 'type_line'
+
+        // scryfallCards.map((card, index) => (
+        //   console.log(card.artist)
+        // ));
+
+        // Fetch the cards by rating
+        const aCards = await fetchRating(mtgCode, 'A');
+        const sCards = await fetchRating(mtgCode, 'S');
+        const bCards = await fetchRating(mtgCode, 'B');
+        const cCards = await fetchRating(mtgCode, 'C');
+        const dCards = await fetchRating(mtgCode, 'D');
+        const fCards = await fetchRating(mtgCode, 'F');
+
+        // Set the state after fetching the data
+        setARate(aCards);
+        setSRate(sCards);
+        setBRate(bCards);
+        setCRate(cCards);
+        setDRate(dCards);
+        setFRate(fCards);
+
+        // Log the results after they are set
+        console.log('B cards: ', bCards);
+        console.log('A cards: ', aCards);
+        console.log('S cards: ', sCards);
+    } catch (err) {
+        console.error('Error fetching data:', err);
+    }
+};
+fetchData();
     
   }, [mtgCode]);
 

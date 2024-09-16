@@ -17,6 +17,8 @@ import { faCircleXmark } from '@fortawesome/free-solid-svg-icons';
 import { faPlay } from '@fortawesome/free-solid-svg-icons';
 
 export const RatingComponent = ({onClose}) => {
+    const [allCardsFromSet, setAllCardsFromSet] = useState([])
+
     const [visible, setVisible] = useState(false);
     const [visibleFilterMenu, setVisibleFilterMenu] = useState(false);
 
@@ -209,7 +211,7 @@ export const RatingComponent = ({onClose}) => {
                 </div>
 
                 <div className='cardImagesContainer'>
-                     
+
                 </div>
             </div>
             
