@@ -6,8 +6,8 @@ import "./LandingPage2.css"
 
 export const LandingPage2 = () => {
     return (
-        <div className='landingPageMain fade-in-element flex flex-col absolute top-0 left-0 w-full h-full '>
-            <div className='navContainer bg-white text-black flex sticky z-10 top-0 gap-6 flex-col w-full content-center justify-center align-middle pb-3'>
+        <div className='landingPageMain fade-in-element flex flex-col absolute top-0 left-0 w-full h-full'>
+            <div className='navContainer  bg-white text-black flex sticky z-10 top-0 gap-6 flex-col w-full content-center justify-center align-middle pb-3'>
                 <NavigationBar/>
             </div>
 
@@ -31,7 +31,7 @@ export const LandingPage2 = () => {
 
             </div>
 
-            <div className='bg-white'>
+            <div className='bg-white bottom-0'>
                 <Footer/>
             </div>
         </div>
