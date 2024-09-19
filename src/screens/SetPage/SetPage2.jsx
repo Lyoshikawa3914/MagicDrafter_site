@@ -253,7 +253,8 @@ fetchData();
                   
                   
                   <div>
-                      <button className='setButton text-xl bg-black text-white'>See All</button>
+                      <button className='setButton text-xl bg-black text-white'
+                      onClick={() => handleRatingButtonClick('ratingsPopUp')}>See All</button>
                   </div>
               </div>
 
@@ -272,32 +273,32 @@ fetchData();
                   </div>}
 
                   <div className='ratingContainer aContainer drop-shadow-xl flex rounded-lg bg-white justify-self-center align-center items-center h-96 w-96'
-                  style={{backgroundImage:`url(${Pic2})`, 
-                }}>
+                  style={{backgroundImage:`url(${Pic2})`,}}
+                  onClick={() => handleRatingButtonClick('ratingsPopUp')}>
                     <div className=''></div>
                   </div>
 
                   <div className='ratingContainer bContainer flex rounded-lg drop-shadow-xl bg-white justify-self-center align-center items-center h-96 w-96'
-                  style={{backgroundImage:`url(${Pic3})`, 
-                }}>
+                  style={{backgroundImage:`url(${Pic3})`,}}
+                  onClick={() => handleRatingButtonClick('ratingsPopUp')}>
                     <div className=''></div>
                   </div>
 
                   <div className='ratingContainer cContainer flex rounded-lg drop-shadow-xl bg-white justify-self-center align-center items-center h-96 w-96'
-                  style={{backgroundImage:`url(${Pic4})`, 
-                }}>
+                  style={{backgroundImage:`url(${Pic4})`,}}
+                  onClick={() => handleRatingButtonClick('ratingsPopUp')}>
                     <div className=''></div>
                   </div>
 
                   <div className='ratingContainer dContainer flex rounded-lg drop-shadow-xl bg-white justify-self-center align-center items-center h-96 w-96'
-                  style={{backgroundImage:`url(${Pic5})`, 
-                }}>
+                  style={{backgroundImage:`url(${Pic5})`,}}
+                  onClick={() => handleRatingButtonClick('ratingsPopUp')}>
                     <div className=''></div>
                   </div>
 
                   <div className='ratingContainer fContainer flex rounded-lg drop-shadow-xl bg-white justify-self-center align-center items-center h-96 w-96'
-                  style={{backgroundImage:`url(${Pic6})`, 
-                }}>
+                  style={{backgroundImage:`url(${Pic6})`,}}
+                  onClick={() => handleRatingButtonClick('ratingsPopUp')}>
                     <div className=''></div>
                   </div>
                     

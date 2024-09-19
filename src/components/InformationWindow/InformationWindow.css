@@ -33,6 +33,7 @@ li {
 
 .infoContainer {
     animation: fadeInAnimation ease-in-out 0.25s;
+    padding: 1em 1em 1em 1em;
 }
 .closeIconButton {
     

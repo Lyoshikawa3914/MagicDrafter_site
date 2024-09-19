@@ -68,7 +68,7 @@
 }
 
 .ratingContainer {
-    transition: 0.2s ease-in-out;
+    transition: transform 0.2s ease-in-out;
     display: flex;
     border-radius: 20%;
     justify-self: center;
@@ -91,12 +91,12 @@
 }
 
 
-
 .ratingContainer:hover {
     transform: scale(1.05);
     cursor: pointer;
     box-shadow: 0px 4px 6px rgb(210, 210, 210), 
     -3px 4px 6px rgb(210, 210, 210),3px 4px 6px rgb(210, 210, 210); 
+    
 }
 
 .infoIcon {
@@ -111,7 +111,7 @@
 
 .infoContainer {
     animation: fadeInAnimation ease-in-out 0.25s;
-    top: 30%;
+    top: 20%;
     left: 20%;
     overflow: hidden;
     position: fixed;

@@ -1,15 +1,19 @@
-import { MySqlConnect } from "./MySqlConnect.js";
+import {AwsMySqlConnect} from "./AwsMySqlConnect.js";
 import { MH3 } from "../HashMap/MH3.js";
+import { DSK } from "../HashMap/DSK.js";
 
 export async function FindMissing() {
     let connection;
     let missingCards = {};
-    const rating = MH3();
+    const rating = DSK();
+    const setCode = 'DSK';
 
     try {
-        connection = await MySqlConnect();
+        connection = await AwsMySqlConnect();
         console.log('Database connection established for FindMissing.');
-        const [rows] = await connection.execute('SELECT name FROM card');
+        const [rows] = await connection.execute(`SELECT name FROM mtg_draft_db.card WHERE set_code = ?`,
+            [setCode]
+        );
         const cardNames = rows.map(row => row.name);
         console.log('Existing card names fetched from the database:', cardNames);
 

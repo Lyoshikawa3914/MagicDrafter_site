@@ -12,23 +12,23 @@ export const InformationWindow =({ onClose }) => {
     
 
     return (
-        <div className='infoContainer bg-white border rounded p-5 z-20'>
+        <div className='infoContainer bg-white border rounded-md p-10 z-20'>
             <div className='closeIconButton '>
                 <CloseIcon onClose={onClose}/>
             </div>
             
-            <div className='ratingHeader text-4xl mb-3'>Ratings</div>
+            <div className='ratingHeader text-4xl mb-7'>Ratings</div>
             <p className='ratingPara mb-10'>
                 These ratings serve as guidelines that will help players decide on what cards to take during the draft.
                 All cards are rated in a vacuum. 
             </p>
             <ul className='ratingList'>
-                <li>S: Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius aspernatur porro et amet dolorem, </li>
-                <li>A: Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius aspernatur porro et amet dolorem, </li>
+                <li>A: These cards are ultra powerful, the kind of cards that will shoot you ahead in the game when played.</li>
                 <li>B: Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius aspernatur porro et amet dolorem, </li>
-                <li>C: Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius aspernatur porro et amet dolorem, </li>
-                <li>D: Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius aspernatur porro et amet dolorem, </li>
-                <li>F: These are unplayable cards. Don't waste your picks.</li>
+                <li>C+: You will always be happy to put these in your deck. If your first few packs were full duds, pick these cards up.</li>
+                <li>C: Not overtly strong cards, just fine cards. These cards help fill out the rest of your deck.</li>
+                <li>D: These are playable cards, but ineffecient in it's mana value or the the card doesn't do enough.</li>
+                <li>F: These are unplayable cards. Don't waste your picks on these. You'll never be hapy playing them </li>
             </ul>
         </div>
     )
