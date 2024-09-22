@@ -323,18 +323,18 @@ export function DSK() {
     "Forest": "F"
     }
 
-    return Duskmourn;
+    // return Duskmourn;
     
-    // let count = 0;
+    let count = 0;
 
-    // for (let name in Duskmourn) {
-    //     if (name.includes('//')) {
-    //         count ++;
-    //         console.log(name);
-    //     }
-    // }
+    for (let name in Duskmourn) {
+        if (name.includes('//')) {
+            count ++;
+            console.log(name);
+        }
+    }
     
-    // console.log(count);
+    console.log(count);
 }
 DSK();
 

@@ -32,17 +32,26 @@ export async function InsertAllCardsBySet() {
 
                 // Insert the card if it does not exist
                 await connection.execute(
-                    `INSERT INTO mtg_draft_db.card (name, mana_value, type, color, rarity, text, rating, set_code) 
-                     VALUES (?, ?, ?, ?, ?, ?, ?, ?)`,
+                    `INSERT INTO mtg_draft_db.card (name, mana_value, type, color, rarity, rating, set_code, text, 
+                    text_back_side, notes, artist, image_small, image_normal, image_large, image_crop, image_png) 
+                     VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`,
                     [
                         element.name,
                         element.cmc,
                         element.type_line,
                         element.color_identity, // Assuming colors is an array
                         element.rarity,
+                        set_code,
                         element.oracle_text,
-                        'na',
-                        set_code
+                        null,
+                        null,
+                        element.artist,
+                        element[image_uris][small],
+                        element[image_uris][normal],
+                        element[image_uris][large],
+                        element[image_uris][art_crop],
+                        null
+
                     ]
                 );
                 console.log(`Inserted card: ${element.name}`);

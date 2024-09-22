@@ -3,10 +3,11 @@
  * entering in a card name. 
  */
 
-export async function CallSingleCardName() {
+export async function CallSingleCardName(name) {
     //console.log('Fetching data for card:', card_name);
-    console.log('Charred Foyer // Warped Space');
-    const url = `https://api.scryfall.com/cards/named?exact=${encodeURIComponent('Charred Foyer // Warped Space')}`;
+    // console.log('Charred Foyer // Warped Space');
+
+    const url = `https://api.scryfall.com/cards/named?exact=${encodeURIComponent(name)}`;
 
     try {
         const response = await fetch(url);
@@ -25,4 +26,4 @@ export async function CallSingleCardName() {
     }
 }
 
-CallSingleCardName();
+//CallSingleCardName();
