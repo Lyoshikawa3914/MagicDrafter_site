@@ -1,4 +1,5 @@
 import React, {useState} from 'react';
+import PropTypes from 'prop-types';
 import { CloseIcon } from "../CloseIcon/CloseIcon.jsx";
 import {SearchBar} from "../SearchBar/SearchBar.jsx";
 import { ColorDropdown } from "../Dropdown/ColorDropdown.jsx";
@@ -16,7 +17,7 @@ import { faCrown } from '@fortawesome/free-solid-svg-icons';
 import { faCircleXmark } from '@fortawesome/free-solid-svg-icons';
 import { faPlay } from '@fortawesome/free-solid-svg-icons';
 
-export const RatingComponent = ({onClose}) => {
+export const RatingComponent = ({onClose, word = []}) => {
     const [allCardsFromSet, setAllCardsFromSet] = useState([])
 
     const [visible, setVisible] = useState(false);
@@ -211,12 +212,28 @@ export const RatingComponent = ({onClose}) => {
                 </div>
 
                 <div className='cardImagesContainer'>
-
+                    {Array.isArray(word) && word.length > 0 ? (
+                        word.map((card, index) => (
+                            <div key={index}>
+                                <h4>{card.name}</h4> {/* Example property */}
+                                <p>Rating: {card.rating}</p> {/* Example property */}
+                                <img src={card.small} alt={card.name} /> {/* Example property */}
+                            </div>
+                        ))
+                    ) : (
+                        <div>No ratings available.</div> // Fallback if array is empty
+                    )}
                 </div>
             </div>
             
-
+ 
             
         </div>
     )
 }
+
+// PropTypes to validate the word prop
+RatingComponent.propTypes = {
+    onClose: PropTypes.func.isRequired,
+    word: PropTypes.array
+};

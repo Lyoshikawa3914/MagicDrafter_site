@@ -25,9 +25,10 @@ export const SetPage2 = () => {
   const navigate = useNavigate();
   const { mtgCards = [], mtgSetName, mtgCode } = location.state || {};
   
-  const [sRate, setSRate] = useState(null);
+  const [rate, setRate] = useState(null);
   const [aRate, setARate] = useState(null);
-  const [bRate, setBRate] = useState(null)
+  const [bRate, setBRate] = useState(null);
+  const [cPlusRate, setCPlusRate] = useState(null);
   const [cRate, setCRate] = useState(null);
   const [dRate, setDRate] = useState(null);
   const [fRate, setFRate] = useState(null);
@@ -129,24 +130,26 @@ export const SetPage2 = () => {
 
         // Fetch the cards by rating
         const aCards = await fetchRating(mtgCode, 'A');
-        const sCards = await fetchRating(mtgCode, 'S');
+        
         const bCards = await fetchRating(mtgCode, 'B');
+        const cPlusCards = await fetchRating(mtgCode, 'C+');
         const cCards = await fetchRating(mtgCode, 'C');
         const dCards = await fetchRating(mtgCode, 'D');
         const fCards = await fetchRating(mtgCode, 'F');
 
         // Set the state after fetching the data
         setARate(aCards);
-        setSRate(sCards);
+        
         setBRate(bCards);
         setCRate(cCards);
+        setCRate(cPlusCards);
         setDRate(dCards);
         setFRate(fCards);
 
         // Log the results after they are set
         console.log('B cards: ', bCards);
         console.log('A cards: ', aCards);
-        console.log('S cards: ', sCards);
+        
     } catch (err) {
         console.error('Error fetching data:', err);
     }
@@ -183,6 +186,28 @@ fetchData();
         ratingsPopUp: newVisibility,
       };
     });
+  };
+
+  const handleLetterGradeArray = (letter) => {
+    if (letter === 'A') {
+      return setRate(aRate);
+    } 
+    else if (letter === 'B') {
+      return setRate(bRate);
+    } 
+    else if (letter === 'C+') {
+      return setRate(cPlusRate);
+    } 
+    else if (letter === 'C') {
+      return setRate(cRate);
+    }
+    else if (letter === 'D') {
+      return setRate(dRate);
+    }
+    else if (letter === 'F') {
+      return setRate(fRate);
+    }
+    return [];
   };
   
   if (loading) {
@@ -254,27 +279,29 @@ fetchData();
                   
                   <div>
                       <button className='setButton text-xl bg-black text-white'
-                      onClick={() => handleRatingButtonClick('ratingsPopUp')}>See All</button>
+                      onClick={() => { handleRatingButtonClick('ratingsPopUp'); }}>See All</button>
                   </div>
               </div>
 
               <div className='grid justify-center align-middle items-center lg:grid-cols-2 xl:grid-cols-3  gap-16 ml-40 mr-40 mt-10'
               >
-                  
-                  <div className='ratingContainer sContainer drop-shadow-xl flex rounded-lg bg-white justify-self-center align-center items-center h-96 w-96'
-                  style={{backgroundImage:`url(${Pic1})`,}}
-                  onClick={() => handleRatingButtonClick('ratingsPopUp')}>
-                    <div className=''></div>
-                  </div>
 
                   {visible.ratingsPopUp && 
                   <div className='ratingComponentContainer'>
-                    <RatingComponent onClose={() => handleRatingButtonClick('ratingsPopUp')}/>
+                    <RatingComponent onClose={() => {handleRatingButtonClick('ratingsPopUp')} } word = {rate} />
                   </div>}
+                  
+                  <div className='ratingContainer sContainer drop-shadow-xl flex rounded-lg bg-white justify-self-center align-center items-center h-96 w-96'
+                  style={{backgroundImage:`url(${Pic1})`,}}
+                  onClick={() => { handleRatingButtonClick('ratingsPopUp'); handleLetterGradeArray('A')}}>
+                    <div className=''></div>
+                  </div>
+
+                  
 
                   <div className='ratingContainer aContainer drop-shadow-xl flex rounded-lg bg-white justify-self-center align-center items-center h-96 w-96'
                   style={{backgroundImage:`url(${Pic2})`,}}
-                  onClick={() => handleRatingButtonClick('ratingsPopUp')}>
+                  onClick={() => {handleRatingButtonClick('ratingsPopUp'); handleLetterGradeArray('B')}} >
                     <div className=''></div>
                   </div>
 
