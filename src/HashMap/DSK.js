@@ -1,3 +1,6 @@
+import { InsertSingleCardIntoDb } from "../MySql/InsertSingleCardIntoDb.js";
+import { CallSingleCardName } from "../ScryfallApi/CallSingleCardName.js";
+
 export function DSK() {
 
     const Duskmourn = {
@@ -60,7 +63,7 @@ export function DSK() {
     'Unidentified Hovership': 'A-',
     'Leyline of Hope': 'F',
     'Ghostly Dancers': 'A+',
-    "Restriced Office // Lecture Hall": "C",
+    "Restricted Office // Lecture Hall": "C",
     'The Wandering Rescuer': 'A+',
     'Dazzling Theater': 'F',
     'Overlord of the Mistmoors': 'A+',
@@ -116,7 +119,7 @@ export function DSK() {
     "Rite of the Moth": "C+",
     "Shroudstomper": "C+",
     "Intruding Soulrager": "C-",
-    "Smokey Lounge // Misty Salon": "Build-around C+",
+    "Smoky Lounge // Misty Salon": "C+",
     "Broodspinner": "B+",
     "Drag to the Roots": "C+",
     "Arabella, Abandoned Doll": "B+",
@@ -321,22 +324,34 @@ export function DSK() {
     "Thornspire Verge": "C+", 
     "Abandoned Campground": "C+",
     "Forest": "F"
-    }
+    };
 
-    // return Duskmourn;
+    return Duskmourn;
     
-    let count = 0;
-
-    for (let name in Duskmourn) {
-        if (name.includes('//')) {
-            count ++;
-            console.log(name);
-        }
-    }
     
-    console.log(count);
+    // for (let name in Duskmourn) {
+    //     if (Duskmourn.hasOwnProperty(name)) { // Safeguard to check if the property really belongs to the object
+    //         try {
+    //             // Fetch the card data from the Scryfall API
+    //             const cardData = await CallSingleCardName(name);
+                
+    //             // Logging the card name to confirm the data fetched
+    //             console.log(`Fetched card data: ${cardData.name}`);
+    
+    //             // Insert the fetched card data into the database
+    //             await InsertSingleCardIntoDb(cardData.name);
+    //         } catch (error) {
+    //             console.error(`Error with card ${name}: ${error.message}`);
+    //         } 
+    //     }
+    //}
+    
+    
+    
 }
-DSK();
+
+
+//DSK();
 
 
 

@@ -43,7 +43,8 @@ export async function AwsMySqlConnect() {
             user: dbUser,
             password: dbPassword,
             database: dbDatabase,
-            port: 3306 // Use the appropriate port if different
+            port: 3306, // Use the appropriate port if different
+            connectTimeout: 100000,
         });
 
         console.log('Connected to the database');

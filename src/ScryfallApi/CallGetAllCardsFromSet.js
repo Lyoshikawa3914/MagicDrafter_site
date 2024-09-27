@@ -1,5 +1,5 @@
 const baseUrl = 'https://api.scryfall.com/sets/';
-const setCode = 'ELD'
+// const setCode = 'ELD'
 
 export async function CallGetAllCardsFromSet(set_code) {
     //const set_code = 'MH3';

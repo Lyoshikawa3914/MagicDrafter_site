@@ -36,6 +36,7 @@
     height: 100%;
     width: 100%;
     animation: fadeInAnimation ease-in-out 0.1s;
+    overflow-y: auto;
 }
 
 .ratingUpperContainer {

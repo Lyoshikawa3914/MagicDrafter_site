@@ -6,19 +6,20 @@ export async function InsertRatingsToCards() {
     let connection;
     const setCode = DSK();
 
-    console.log(setCode);
+    console.log(Object.keys(setCode));
 
     try {
         connection = await AwsMySqlConnect();
 
         for (let cardName of Object.keys(setCode)) {
             let cardRating = setCode[cardName];
-            console.log(`${cardName}: ${cardRating}`);
+            console.log(`${cardName}: tata ${cardRating}`);
 
             await connection.query(
                 `UPDATE mtg_draft_db.card
                 SET rating = ?
-                WHERE name = ?`,
+                
+                WHERE LOWER(TRIM(name)) = LOWER(TRIM(?))`,
 
                 [
                     cardRating,

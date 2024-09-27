@@ -6,6 +6,7 @@
 export async function CallSingleCardName(name) {
     //console.log('Fetching data for card:', card_name);
     // console.log('Charred Foyer // Warped Space');
+    console.log(name)
 
     const url = `https://api.scryfall.com/cards/named?exact=${encodeURIComponent(name)}`;
 
@@ -16,14 +17,14 @@ export async function CallSingleCardName(name) {
         }
 
         const cardData = await response.json();
-        console.log(cardData);
+        //console.log(cardData);
         
         //console.log(`Data fetched for card ${card_name}:`, cardData);
-        //return cardData;
+        return cardData;
     } catch (error) {
         console.log(`Error fetching card data for ${name}: ${error.message}`);
         throw error;
     }
 }
 
-//CallSingleCardName();
+// CallSingleCardName();

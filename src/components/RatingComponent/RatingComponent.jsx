@@ -216,8 +216,12 @@ export const RatingComponent = ({onClose, word = []}) => {
                         word.map((card, index) => (
                             <div key={index}>
                                 <h4>{card.name}</h4> {/* Example property */}
-                                <p>Rating: {card.rating}</p> {/* Example property */}
-                                <img src={card.small} alt={card.name} /> {/* Example property */}
+                                
+                                <img src={card.image_crop} alt={card.name}
+                                style={{
+                                    height:'300px',
+                                    width:'500px'
+                                }}/> {/* Example property */}
                             </div>
                         ))
                     ) : (
