@@ -307,25 +307,25 @@ fetchData();
 
                   <div className='ratingContainer bContainer flex rounded-lg drop-shadow-xl bg-white justify-self-center align-center items-center h-96 w-96'
                   style={{backgroundImage:`url(${Pic3})`,}}
-                  onClick={() => handleRatingButtonClick('ratingsPopUp')}>
+                  onClick={() => {handleRatingButtonClick('ratingsPopUp'); handleLetterGradeArray('C')}}>
                     <div className=''></div>
                   </div>
 
                   <div className='ratingContainer cContainer flex rounded-lg drop-shadow-xl bg-white justify-self-center align-center items-center h-96 w-96'
                   style={{backgroundImage:`url(${Pic4})`,}}
-                  onClick={() => handleRatingButtonClick('ratingsPopUp')}>
+                  onClick={() => {handleRatingButtonClick('ratingsPopUp'); handleLetterGradeArray('D')}}>
                     <div className=''></div>
                   </div>
 
                   <div className='ratingContainer dContainer flex rounded-lg drop-shadow-xl bg-white justify-self-center align-center items-center h-96 w-96'
                   style={{backgroundImage:`url(${Pic5})`,}}
-                  onClick={() => handleRatingButtonClick('ratingsPopUp')}>
+                  onClick={() => {handleRatingButtonClick('ratingsPopUp'); handleLetterGradeArray('D')}}>
                     <div className=''></div>
                   </div>
 
                   <div className='ratingContainer fContainer flex rounded-lg drop-shadow-xl bg-white justify-self-center align-center items-center h-96 w-96'
                   style={{backgroundImage:`url(${Pic6})`,}}
-                  onClick={() => handleRatingButtonClick('ratingsPopUp')}>
+                  onClick={() => {handleRatingButtonClick('ratingsPopUp'); handleLetterGradeArray('F')}}>
                     <div className=''></div>
                   </div>
                     

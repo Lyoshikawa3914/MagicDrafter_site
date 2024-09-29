@@ -86,7 +86,7 @@ export const RatingComponent = ({onClose, word = []}) => {
     return (
         <div className='ratingComponentBody z-30 mt-1'>
             <div className='ratingUpperContainer bg-white shadow-slate-300'>
-                    <div className='flex gap-x-3 pb-1'>
+                    <div className='flex gap-x-3 pt-4'>
                         <div className='ratingSetname '>Set Name</div>
                         <div className='tierContainer '>#-Tier</div>
                     </div>
@@ -108,7 +108,7 @@ export const RatingComponent = ({onClose, word = []}) => {
                         <div
                         className={`ratingBackButtonContainer ${visible ? 'appear' : ''}`}
                         onClick={closeButtonFunction}>
-                            <FontAwesomeIcon icon={faCircleXmark} size='2xl'></FontAwesomeIcon>
+                            <FontAwesomeIcon icon={faCircleXmark} size='2xl' color='white'></FontAwesomeIcon>
                         </div>
 
                         {/* <div className={`filterTitleContainer ${visible ? 'appear': ''}`}>Filter</div> */}
@@ -214,14 +214,19 @@ export const RatingComponent = ({onClose, word = []}) => {
                 <div className='cardImagesContainer'>
                     {Array.isArray(word) && word.length > 0 ? (
                         word.map((card, index) => (
-                            <div key={index}>
-                                <h4>{card.name}</h4> {/* Example property */}
+                            <div key={index} className='croppedImageContainer'>
+                                
                                 
                                 <img src={card.image_crop} alt={card.name}
+                                className='croppedImage drop-shadow-lg'
                                 style={{
                                     height:'300px',
-                                    width:'500px'
-                                }}/> {/* Example property */}
+                                    width:'450px',
+                                    borderRadius: '3%',
+                                }}
+                                />
+                                <div className='croppedImageName '>{card.name}</div>
+                                
                             </div>
                         ))
                     ) : (
